@@ -1,0 +1,14 @@
+{
+  "name": "Scrim-s04e1rc",
+  "description": "https://scrimba.com/s04e1rc",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}

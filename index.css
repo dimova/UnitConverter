@@ -1,0 +1,219 @@
+/* =========================
+   LIGHT MODE (default)
+========================= */
+
+:root {
+    --bg-color: #F4F4F4;
+    --container-bg: #FFFFFF;
+    --primary-color: #6943FF;
+    --secondary-color: #5A537B;
+    --heading-color: #353535;
+    --text-color: #353535;
+    --input-bg: #FFFFFF;
+    --input-border: #B295FF;
+    --result-bg: #F4F4F4;
+    --result-title: #5A537B;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+[data-theme="dark"] {
+    --bg-color: #1F2937;
+    --container-bg: #273549;
+    --primary-color: #8B5CF6;
+    --secondary-color: #CCC1FF;
+    --heading-color: #FFFFFF;
+    --text-color: #FFFFFF;
+    --input-bg: #273549;
+    --input-border: #A78BFA;
+    --result-bg: #1F2937;
+    --result-title: #C4B5FD;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 550px;
+    background: var(--container-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   HEADER SECTION
+========================= */
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+
+input {
+    width: 200px;
+    height: 85px;
+
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+
+    color: white;
+    font-size: 58px;
+    font-weight: 800;
+
+    text-align: center;
+    padding: 0 12px;
+}
+
+
+button {
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: white;
+    color: #3D3D3D;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONVERSION CARDS
+========================= */
+
+.results {
+    padding: 35px 25px;
+}
+
+
+.card {
+    background: var(--result-bg);
+
+    text-align: center;
+
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 5px;
+}
+
+
+.card h2 {
+    margin: 0 0 15px;
+
+    font-size: 20px;
+    color: var(--result-title);
+}
+
+
+.card p {
+    margin: 0;
+
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: var(--container-bg);
+    color: var(--text-color);
+
+    border: none;
+    padding: 0;
+    border-radius: 20px;
+    font-weight: 600;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow);
+}
+
+.theme-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: none;
+}
+
+.theme-icon--moon {
+    fill: currentColor;
+    stroke: none;
+}
+
+[data-theme="light"] .theme-toggle .theme-icon--moon,
+[data-theme="dark"] .theme-toggle .theme-icon--sun {
+    display: block;
+}
